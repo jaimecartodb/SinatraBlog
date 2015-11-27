@@ -7,6 +7,8 @@ class Post
     @title = title
     @date = date
     @text = text
+    @category = category
+    @author = author
   end
 
 end

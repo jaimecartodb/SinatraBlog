@@ -32,6 +32,6 @@ get '/new_post' do
 end
 
 post '/create_post' do
-	myBlog.add_post(Post.new(params[:post_title], Time.now, params[:post_text]))
+	myBlog.add_post(Post.new(params[:post_title], Time.now, params[:post_text], params[:category], params[:author]))
 	redirect('/blog')
 end
