@@ -8,26 +8,27 @@ class Blog
 		@posts = []
 	end
 
-	def add_post(post)
+	def add_post post
 		@posts << post
+	end
+
+	def sort_all_posts
+		@posts.sort {|post1, post2| post2.date <=> post1.date}
+	end
+
+	def show
+		@posts
 	end
 
 	def posts_print
 		@posts.each do |item|
-			puts item.return_title
-			puts item.return_date
+			puts item.title
+			puts item.date
 		end
 	end
 
 end
 
-post1 = Post.new("hello", "this is a cool entrance")
-post2 = Post.new("bye", "and this is the second post")
-blog = Blog.new
-blog.add_post(post1)
-blog.add_post(post2)
-binding.pry
-blog.posts_print
 
 
 ##Your Blog class should have a #posts method that returns an array. That array should contain Post instances. With that array, you can loop over it in a view to show each post's title and date.
